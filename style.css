@@ -1,3 +1,4 @@
+/* Reset básico */
 * {
   margin: 0;
   padding: 0;
@@ -9,15 +10,15 @@ body {
   background: #f2f2f2;
   color: #333;
   line-height: 1.6;
-  animation: fadeIn 1s ease-in;
 }
 
+/* Cabeçalho */
 header {
   background-color: #ff4d4d;
   color: white;
-  padding: 2rem 1rem;
   text-align: center;
-  animation: slideDown 0.8s ease-out;
+  padding: 2rem 1rem;
+  animation: fadeDown 0.6s ease-out;
 }
 
 header h1 {
@@ -25,74 +26,152 @@ header h1 {
   margin-bottom: 0.5rem;
 }
 
-main {
-  padding: 2rem 1rem;
-  display: flex;
-  justify-content: center;
-}
-
+/* Seção de Menu */
 .menu {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.5rem;
-  max-width: 1000px;
   justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
 }
 
+/* Card de item */
 .card {
   background-color: white;
-  border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   padding: 1rem;
   width: 250px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease;
   animation: fadeUp 0.5s ease-in;
 }
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
 .image-placeholder {
-  width: 100%;
+  background-color: #ddd;
   height: 150px;
-  background: #ddd;
-  border-radius: 10px;
+  border-radius: 8px;
   margin-bottom: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #666;
-  font-weight: bold;
+  color: #888;
+  font-size: 1.1rem;
 }
 
-.price {
-  display: block;
-  margin-top: 0.5rem;
-  font-weight: bold;
+.card h2 {
+  margin-bottom: 0.5rem;
   color: #e60000;
 }
 
+.card p {
+  margin-bottom: 0.5rem;
+}
+
+.price {
+  font-weight: bold;
+  color: #333;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.card button {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.card button:hover {
+  background-color: #e60000;
+}
+
+/* Carrinho */
+.cart {
+  max-width: 800px;
+  margin: 2rem auto;
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  animation: fadeUp 0.5s ease-in;
+}
+
+.cart h2 {
+  margin-bottom: 1rem;
+  color: #e60000;
+}
+
+.cart ul {
+  list-style: none;
+  margin-bottom: 1rem;
+}
+
+.cart li {
+  padding: 0.3rem 0;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart li button {
+  background-color: transparent;
+  color: red;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.cart button {
+  margin-top: 0.5rem;
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.cart button:hover {
+  background-color: #e60000;
+}
+
+/* Rodapé */
 footer {
+  background-color: #222;
+  color: #ccc;
   text-align: center;
   padding: 1rem;
-  background-color: #333;
-  color: white;
   margin-top: 2rem;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes slideDown {
-  from { transform: translateY(-20px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
-
+/* Animações */
 @keyframes fadeUp {
-  from { transform: translateY(20px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
